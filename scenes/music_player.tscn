@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/music_player.gd" type="Script" id=1]
+
+[node name="MusicPlayer" type="Node"]
+script = ExtResource( 1 )
+first_load = "start_the_switch"
+
+[node name="Tween" type="Tween" parent="."]

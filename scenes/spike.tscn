@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/spike.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 4, 1 )
+
+[node name="Spike" type="Area2D" groups=[
+"Spikes",
+]]
+z_index = -1
+collision_layer = 15
+collision_mask = 15
+script = ExtResource( 2 )
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+position = Vector2( 0, 1 )
+shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
